@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "github.com/rima971/wallet-app";
+
+message User {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  string message = 1;
+  User user = 2;
+}
+
+service Authenticator {
+  rpc Register(User) returns (RegisterResponse);
+}
